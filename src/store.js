@@ -1,4 +1,5 @@
 import { atom, selector } from 'recoil'
+import axios from 'axios'
 
 const listDataState = atom({
     key: "listDataState", default: [
@@ -7,6 +8,15 @@ const listDataState = atom({
         { id: 3, label: "listen to music", visible: true, isDone: false },
         { id: 4, label: "hangout with gf", visible: true, isDone: true }
     ]
+})
+
+const queryListDataState = selector({
+    key: "queryListDataState",
+    get: async () => {
+        const res = await axios.get('/remotelistdata');
+        console.log(res);
+        return res.data.data;
+    }
 })
 
 const filterState = atom({
@@ -32,5 +42,6 @@ const filteredListState = selector({
 export {
     listDataState,
     filteredListState,
-    filterState
+    filterState,
+    queryListDataState
 }
