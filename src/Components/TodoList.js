@@ -38,12 +38,12 @@ function TodoList() {
                         setListData(newListData);
                         setInputData("");
                     }}>Add</button>
-                    {
-                        filter === "all" ? 
-                        <button onClick={() => { setFilter("undos") }}>Show Undos</button> : 
-                        <button onClick={() => { setFilter("all") }}>Show All</button>
-                    }
                 </span>
+                <select value={filter} onChange={({ target: { value } }) => setFilter(value)}>
+                    <option value="all">All</option>
+                    <option value="completed">Completed</option>
+                    <option value="undos">Uncompleted</option>
+                </select>
             </div>
         </div>
     )
