@@ -2,7 +2,7 @@
 
 Demo of **React** and **Recoil**
 
-![截屏2020-05-25 01.17.18](/Users/kaikai/Desktop/截屏2020-05-25 01.17.18.png)
+![](http://qiniustorage.joyinn.top/截屏2020-04-0723.57.34.png)
 
 ```bash
 // just npm i and npm start
